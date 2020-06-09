@@ -1,11 +1,11 @@
 {
-  "name": "upload-s3-action",
-  "description": "Upload directory to AWS S3",
-  "version": "1.0.1",
+  "name": "simple-s3-upload-action",
+  "description": "Simple Upload directory to AWS S3",
+  "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "repository": "https://github.com/shallwefootball/upload-s3-action",
-  "author": "Dong Keon Kim <amos@shallwefootball.com>",
+  "repository": "https://github.com/ochanje210/simple-s3-upload-action",
+  "author": "Youngchan Je <ochanje210@gmail.com>",
   "scripts": {
     "package": "ncc build index.js -o dist"
   },

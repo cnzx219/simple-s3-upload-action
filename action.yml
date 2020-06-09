@@ -1,25 +1,26 @@
-name: Upload S3
-description: 'Upload directory to S3'
-author: 'Dong Keon Kim'
+name: Simple Upload S3
+description: 'Simple Upload directory to S3'
+author: 'Youngchan Je'
 branding:
   icon: 'upload-cloud'
   color: 'orange'
 inputs:
-  aws_key_id:
+  AWS_ACCESS_KEY_ID:
     description: 'aws key id'
     required: true
-  aws_secret_access_key:
+  AWS_SECRET_ACCESS_KEY:
     description: 'aws secret access key'
     required: true
-  aws_bucket:
+  AWS_S3_BUCKET:
     description: 'aws bucket name'
     required: true
-  source_dir:
+  SOURCE_DIR:
     required: true
     description: 'directory to upload'
+  DEST_DIR:
+    required: true
+    description: 'directory to be uploaded in your S3 bucket'
 outputs:
-  object_key:
-    description: 'object key'
   object_locations:
     description: 'object locations'
 runs:
