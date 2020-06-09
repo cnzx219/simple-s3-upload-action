@@ -1,5 +1,7 @@
 # Simple S3 Upload
 
+## FORKED FROM: https://github.com/shallwefootball/upload-s3-action
+
 This action upload directory to AWS S3 by [public read](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteAccessPermissionsReqd.html) with custom destination directory
 
 ## Usage
