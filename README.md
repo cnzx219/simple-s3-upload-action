@@ -20,10 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: ochanje210/s3-upload-action@master
+      - uses: cnzx219/simple-s3-upload-action@master
         with:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          AWS_S3_REGION: ${{ secrets.AWS_S3_REGION }}
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
           SOURCE_DIR: '<directory name>'
           DEST_DIR: '<destination directory name to your S3 bucket>'
@@ -37,6 +38,7 @@ The following settings must be passed as environment variables as shown in the e
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | `AWS_ACCESS_KEY_ID`            | (Required) Your AWS Access Key. [More info here.](https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html)        |
 | `AWS_SECRET_ACCESS_KEY` | (Required) Your AWS Secret Access Key. [More info here.](https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html) |
+| `AWS_S3_REGION`            | (Required) The region of the bucket you're upload to.                                                                                   |
 | `AWS_S3_BUCKET`            | (Required) The name of the bucket you're upload to.                                                                                   |
 | `SOURCE_DIR`            | (Required) The local directory you wish to upload to S3.                                                                              |
 | `DEST_DIR`              | (Required) The output directory you with to be uploaded in your S3 bucket.                                                            |

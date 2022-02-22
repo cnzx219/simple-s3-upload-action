@@ -11,6 +11,9 @@ const AWS_KEY_ID = core.getInput('AWS_ACCESS_KEY_ID', {
 const SECRET_ACCESS_KEY = core.getInput('AWS_SECRET_ACCESS_KEY', {
   required: true
 });
+const REGION = core.getInput('AWS_S3_REGION', {
+  required: true
+});
 const BUCKET = core.getInput('AWS_S3_BUCKET', {
   required: true
 });
@@ -23,7 +26,8 @@ const DEST_DIR = core.getInput('DEST_DIR', {
 
 const s3 = new S3({
   accessKeyId: AWS_KEY_ID,
-  secretAccessKey: SECRET_ACCESS_KEY
+  secretAccessKey: SECRET_ACCESS_KEY,
+  region: REGION,
 });
 const objKey = DEST_DIR;
 const paths = klawSync(SOURCE_DIR, {
@@ -47,7 +51,6 @@ function run() {
       const fileStream = fs.createReadStream(p.path);
       const params = {
         Bucket: BUCKET,
-        ACL: 'public-read',
         Body: fileStream,
         Key,
         ContentType: lookup(p.path) || 'text/plain'

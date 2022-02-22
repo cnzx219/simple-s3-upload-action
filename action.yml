@@ -11,6 +11,9 @@ inputs:
   AWS_SECRET_ACCESS_KEY:
     description: 'aws secret access key'
     required: true
+  AWS_S3_REGION:
+    description: 'aws bucket region'
+    required: true
   AWS_S3_BUCKET:
     description: 'aws bucket name'
     required: true
